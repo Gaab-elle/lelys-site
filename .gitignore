@@ -1,0 +1,22 @@
+# Média pesada — permanece no servidor/local de deploy, não versionar no Git
+*.mp4
+*.mov
+*.webm
+*.mkv
+
+# RAW / ficheiros enormes acidentais
+*.DNG
+*.dng
+*.cr2
+*.nef
+
+# Editor / SO
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*

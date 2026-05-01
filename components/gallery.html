@@ -1,0 +1,25 @@
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="gallery-intro">
+    <h2 class="section-title" style="text-align:center;margin:0 auto" data-i18n="gallery.title">Nossa Galeria</h2>
+    <p class="section-text" style="text-align:center;margin-top:1rem" data-i18n="gallery.text">Um olhar sobre os momentos mágicos que tivemos o privilégio de criar para nossos clientes.</p>
+    <div class="gallery-filters" role="tablist" aria-label="Filtrar galeria por espaço" data-i18n-attr="aria-label:gallery.filtersAria">
+      <button class="gallery-filter is-active" data-space="maison" type="button" data-i18n="gallery.filterMaison">MAISON</button>
+      <button class="gallery-filter" data-space="jardin" type="button" data-i18n="gallery.filterJardin">JARDIN</button>
+      <button class="gallery-filter" data-space="ventura" type="button" data-i18n="gallery.filterVentura">VENTURA</button>
+      <button class="gallery-filter" data-space="eba" type="button" data-i18n="gallery.filterEba">EBA</button>
+    </div>
+  </div>
+
+  <div class="gallery-grid" id="gallery-grid"></div>
+  <div class="gallery-nav">
+    <button id="gallery-prev" class="gallery-arrow" type="button" aria-label="Mostrar imagens anteriores" data-i18n-attr="aria-label:gallery.prevAria">←</button>
+    <span id="gallery-page-indicator" class="gallery-page-indicator">1 / 1</span>
+    <button id="gallery-next" class="gallery-arrow" type="button" aria-label="Mostrar mais imagens" data-i18n-attr="aria-label:gallery.nextAria">→</button>
+  </div>
+  <div id="gallery-lightbox" class="gallery-lightbox" aria-hidden="true">
+    <button id="gallery-lightbox-close" class="gallery-lightbox-close" type="button" aria-label="Fechar imagem" data-i18n-attr="aria-label:gallery.closeAria">×</button>
+    <img id="gallery-lightbox-image" class="gallery-lightbox-image" src="" alt="Imagem ampliada da galeria" data-i18n-attr="alt:gallery.lightboxAlt">
+  </div>
+
+</section>
