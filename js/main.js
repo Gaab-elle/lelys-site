@@ -2,6 +2,36 @@ const LANGUAGE_STORAGE_KEY = "lelys-language";
 const SUPPORTED_LANGUAGES = ["pt", "en", "es"];
 let currentLanguage = "pt";
 
+/** WhatsApp: DDI 55 + DDD + número (apenas dígitos). Edite aqui ou use data-eba-whatsapp no body de eba-infantil.html */
+const EBA_WHATSAPP_NUMBER = "5591999999999";
+
+const EBA_GALLERY_PATHS = [
+  "EBA/BABY SHARK - EBA.jpeg",
+  "EBA/BABY SHARK-EBA.jpeg",
+  "EBA/CORINTHIANS2-EBA.jpeg",
+  "EBA/CORINTHIANS3- EBA.jpeg",
+  "EBA/CORINTHIANS3-EBA.jpeg",
+  "EBA/DINOSAUROS- EBA.jpg.jpeg",
+  "EBA/HARRY POTTER-EBA.jpeg",
+  "EBA/MINECRAFT - EBA.jpeg",
+  "EBA/MINECRAFT-EBA.jpeg",
+  "EBA/MINECRAFT3-EBA.jpeg",
+  "EBA/NARUTO-EBA.png",
+  "EBA/NARUTO-EBA3.png",
+  "EBA/PATRULHA CANINA-EBA.jpeg",
+  "EBA/PEQUENA SEREIA - EBA.png",
+  "EBA/PEQUENA SEREIA1 - EBA.png",
+  "EBA/PEQUENO PRINCIPE1 - EBA.jpeg",
+  "EBA/PRINCESAS1-EBA.jpeg",
+  "EBA/PRINCESAS2- EBA.jpeg",
+  "EBA/SAVANA-EBA.jpeg",
+  "EBA/SONIC-EBA.jpeg",
+  "EBA/TOY STORY-EBA.jpeg"
+];
+
+/** Quantidade de fotos no carrossel 3D; o restante abre na grelha com «Ver todas». */
+const EBA_GALLERY_PREVIEW_COUNT = 12;
+
 const TRANSLATIONS = {
   pt: {
     "meta.title": "Le Lys Espaço",
@@ -9,6 +39,7 @@ const TRANSLATIONS = {
     "nav.spaces": "Espaços",
     "nav.gallery": "Galeria",
     "nav.contact": "Contato",
+    "nav.ebaAria": "EBA Buffet Infantil — página dedicada",
     "nav.quote": "Fazer um Orçamento",
     "nav.languageSelector": "Seletor de idioma",
     "hero.kicker": "Le Lys Espaço",
@@ -66,8 +97,48 @@ const TRANSLATIONS = {
     "footer.services": "Espaços",
     "footer.gallery": "Galeria",
     "footer.contact": "Contato",
+    "footer.eba": "EBA",
     "footer.privacy": "Privacidade",
-    "footer.copy": "© 2026 Le Lys Espaço. Todos os direitos reservados."
+    "footer.copy": "© 2026 Le Lys Espaço. Todos os direitos reservados.",
+    "ebaPage.metaTitle": "EBA Buffet Infantil | Le Lys Espaço",
+    ebaCarouselItems: ["FESTAS TEMÁTICAS", "ANIVERSÁRIOS", "MESVERSÁRIOS", "DECORAÇÃO INCLUSA", "BUFFET INFANTIL", "DIVERSÃO GARANTIDA"],
+    "ebaPage.heroKicker": "Le Lys Espaço · EBA Buffet Infantil",
+    "ebaPage.heroHeading": "Conheça o EBA Buffet Infantil",
+    "ebaPage.heroLogoAlt": "Logo EBA Buffet Infantil",
+    "ebaPage.heroDescription": "O espaço onde a festa dos pequenos ganha cor, carinho e estrutura completa.",
+    "ebaPage.heroCtaScroll": "CONHEÇA O EBA",
+    "ebaPage.carouselAria": "Destaques do EBA Buffet Infantil",
+    "ebaPage.heroImgAlt": "Criança celebrando com confete — EBA Buffet Infantil",
+    "ebaPage.aboutTitle": "O que é o EBA",
+    "ebaPage.aboutImgAlt": "Criança celebrando com chapéu de aniversário — EBA Buffet Infantil",
+    "ebaPage.aboutText": "O EBA Buffet Infantil é um espaço pensado para que as crianças sejam protagonistas: buffet especializado, decoração temática inclusa (consultar nossos pacotes) e um ambiente seguro e acolhedor para aniversários, mesversários e celebrações em família — com toda a estrutura e o cuidado da Le Lys Espaço.",
+    "ebaPage.servicesTitle": "Por que celebrar no EBA",
+    "ebaPage.service1Title": "Buffet infantil",
+    "ebaPage.service1Desc": "Cardápio pensado para crianças, com sabor e apresentação que encantam a turma.",
+    "ebaPage.service2Title": "Decoração",
+    "ebaPage.service2Desc": "Cenário temático incluso, com detalhes que traduzem o universo escolhido para a festa.",
+    "ebaPage.service3Title": "Animação",
+    "ebaPage.service3Desc": "Brincadeiras e diversão para manter a energia lá em cima durante toda a celebração.",
+    "ebaPage.service4Title": "Fotografia",
+    "ebaPage.service4Desc": "Ambientes pensados para registrar os melhores momentos em família.",
+    "ebaPage.service5Title": "Filmagem",
+    "ebaPage.service5Desc": "Possibilidade de captar o clima da festa em vídeo, conforme seu pacote.",
+    "ebaPage.service6Title": "Garagem",
+    "ebaPage.service6Desc": "Estacionamento para facilitar a chegada das famílias na festa.",
+    "ebaPage.servicesImgAlt": "Criança celebrando com confete colorido — EBA Buffet Infantil",
+    "ebaPage.galleryTitle": "Galeria de festas",
+    "ebaPage.gallerySub": "Temas variados — cada celebração com a cara da sua família.",
+    "ebaPage.galleryImgAlt": "Foto de festa infantil no EBA Buffet Infantil",
+    "ebaPage.gallerySeeAll": "Ver todas",
+    "ebaPage.gallerySeeLess": "Mostrar menos",
+    "ebaPage.galleryAllAria": "Todas as fotos da galeria EBA",
+    "ebaPage.ctaFinalTitle": "Pronto para planejar a festa?",
+    "ebaPage.ctaFinalSub": "Chame no WhatsApp e receba orientação sobre o EBA Buffet Infantil.",
+    "ebaPage.whatsappBtn": "Falar no WhatsApp",
+    "ebaPage.whatsappPrefill": "Olá! Quero saber mais sobre o EBA Buffet Infantil na Le Lys Espaço.",
+    "ebaPage.instagramAria": "Instagram EBA Buffet Infantil",
+    "ebaPage.backSection": "← Voltar ao site principal",
+    "ebaPage.ctaQuote": "FAÇA UM ORÇAMENTO NO SITE"
   },
   en: {
     "meta.title": "Le Lys Venue",
@@ -75,6 +146,7 @@ const TRANSLATIONS = {
     "nav.spaces": "Venues",
     "nav.gallery": "Gallery",
     "nav.contact": "Contact",
+    "nav.ebaAria": "EBA Kids Buffet — dedicated page",
     "nav.quote": "Request a Quote",
     "nav.languageSelector": "Language selector",
     "hero.kicker": "Le Lys Venue",
@@ -132,8 +204,48 @@ const TRANSLATIONS = {
     "footer.services": "Venues",
     "footer.gallery": "Gallery",
     "footer.contact": "Contact",
+    "footer.eba": "EBA",
     "footer.privacy": "Privacy",
-    "footer.copy": "© 2026 Le Lys Venue. All rights reserved."
+    "footer.copy": "© 2026 Le Lys Venue. All rights reserved.",
+    "ebaPage.metaTitle": "EBA Kids Buffet | Le Lys Venue",
+    ebaCarouselItems: ["THEMED PARTIES", "BIRTHDAYS", "MONTHLY CELEBRATIONS", "DECOR INCLUDED", "KIDS BUFFET", "FUN GUARANTEED"],
+    "ebaPage.heroKicker": "Le Lys Venue · EBA Kids Buffet",
+    "ebaPage.heroHeading": "Discover EBA Kids Buffet",
+    "ebaPage.heroLogoAlt": "EBA Kids Buffet logo",
+    "ebaPage.heroDescription": "Where kids’ parties get color, care, and full support.",
+    "ebaPage.heroCtaScroll": "DISCOVER EBA",
+    "ebaPage.carouselAria": "EBA Kids Buffet highlights",
+    "ebaPage.heroImgAlt": "Child celebrating with confetti — EBA Kids Buffet",
+    "ebaPage.aboutTitle": "What is EBA",
+    "ebaPage.aboutImgAlt": "Child celebrating with a birthday hat — EBA Kids Buffet",
+    "ebaPage.aboutText": "EBA Kids Buffet is a space designed for children to take center stage: specialized buffet, themed décor included (see our packages), and a safe, welcoming environment for birthdays, monthly milestones, and family celebrations — with the full structure and care of Le Lys Venue.",
+    "ebaPage.servicesTitle": "Why celebrate at EBA",
+    "ebaPage.service1Title": "Kids buffet",
+    "ebaPage.service1Desc": "Menus crafted for children with flavors and presentation kids love.",
+    "ebaPage.service2Title": "Decor",
+    "ebaPage.service2Desc": "Themed sets included, with details that match your chosen world.",
+    "ebaPage.service3Title": "Activities",
+    "ebaPage.service3Desc": "Games and fun to keep the party energy high from start to finish.",
+    "ebaPage.service4Title": "Photography",
+    "ebaPage.service4Desc": "Spaces designed so families can capture special memories.",
+    "ebaPage.service5Title": "Video",
+    "ebaPage.service5Desc": "Optional recording of the celebration’s vibe, depending on your package.",
+    "ebaPage.service6Title": "Parking",
+    "ebaPage.service6Desc": "Parking so families can arrive comfortably for the party.",
+    "ebaPage.servicesImgAlt": "Child celebrating with colorful confetti — EBA Kids Buffet",
+    "ebaPage.galleryTitle": "Party gallery",
+    "ebaPage.gallerySub": "Many themes — each celebration reflects your family.",
+    "ebaPage.galleryImgAlt": "Kids party photo at EBA Kids Buffet",
+    "ebaPage.gallerySeeAll": "See all",
+    "ebaPage.gallerySeeLess": "Show less",
+    "ebaPage.galleryAllAria": "All photos in the EBA gallery",
+    "ebaPage.ctaFinalTitle": "Ready to plan the party?",
+    "ebaPage.ctaFinalSub": "Message us on WhatsApp for EBA Kids Buffet details.",
+    "ebaPage.whatsappBtn": "Chat on WhatsApp",
+    "ebaPage.whatsappPrefill": "Hello! I’d like to know more about EBA Kids Buffet at Le Lys Venue.",
+    "ebaPage.instagramAria": "EBA Kids Buffet on Instagram",
+    "ebaPage.backSection": "← Back to main site",
+    "ebaPage.ctaQuote": "REQUEST A QUOTE ON THE SITE"
   },
   es: {
     "meta.title": "Le Lys Espacio",
@@ -141,6 +253,7 @@ const TRANSLATIONS = {
     "nav.spaces": "Espacios",
     "nav.gallery": "Galería",
     "nav.contact": "Contacto",
+    "nav.ebaAria": "EBA Buffet Infantil — página infantil dedicada",
     "nav.quote": "Solicitar Presupuesto",
     "nav.languageSelector": "Selector de idioma",
     "hero.kicker": "Le Lys Espacio",
@@ -198,8 +311,48 @@ const TRANSLATIONS = {
     "footer.services": "Espacios",
     "footer.gallery": "Galería",
     "footer.contact": "Contacto",
+    "footer.eba": "EBA",
     "footer.privacy": "Privacidad",
-    "footer.copy": "© 2026 Le Lys Espacio. Todos los derechos reservados."
+    "footer.copy": "© 2026 Le Lys Espacio. Todos los derechos reservados.",
+    "ebaPage.metaTitle": "EBA Buffet Infantil | Le Lys Espacio",
+    ebaCarouselItems: ["FIESTAS TEMÁTICAS", "CUMPLEAÑOS", "MESVERSARIOS", "DECORACIÓN INCLUIDA", "BUFFET INFANTIL", "DIVERSIÓN ASEGURADA"],
+    "ebaPage.heroKicker": "Le Lys Espacio · EBA Buffet Infantil",
+    "ebaPage.heroHeading": "Conoce el EBA Buffet Infantil",
+    "ebaPage.heroLogoAlt": "Logo EBA Buffet Infantil",
+    "ebaPage.heroDescription": "El espacio donde la fiesta de los peques cobra color y estructura completa.",
+    "ebaPage.heroCtaScroll": "CONOCE EL EBA",
+    "ebaPage.carouselAria": "Destacados EBA Buffet Infantil",
+    "ebaPage.heroImgAlt": "Niña celebrando con confeti — EBA Buffet Infantil",
+    "ebaPage.aboutTitle": "Qué es el EBA",
+    "ebaPage.aboutImgAlt": "Niño celebrando con gorro de cumpleaños — EBA Buffet Infantil",
+    "ebaPage.aboutText": "EBA Buffet Infantil es un espacio pensado para que los niños sean protagonistas: buffet especializado, decoración temática incluida (consulte nuestros paquetes) y un ambiente seguro y acogedor para cumpleaños, mesversarios y celebraciones en familia — con toda la estructura y el cariño de Le Lys Espacio.",
+    "ebaPage.servicesTitle": "Por qué celebrar en el EBA",
+    "ebaPage.service1Title": "Buffet infantil",
+    "ebaPage.service1Desc": "Menú pensado para los niños, con sabor y presentación que enamoran.",
+    "ebaPage.service2Title": "Decoración",
+    "ebaPage.service2Desc": "Escenario temático incluido, con detalles del universo que elijas.",
+    "ebaPage.service3Title": "Animación",
+    "ebaPage.service3Desc": "Juegos y diversión para mantener la energía alta durante la fiesta.",
+    "ebaPage.service4Title": "Fotografía",
+    "ebaPage.service4Desc": "Espacios pensados para guardar los mejores momentos en familia.",
+    "ebaPage.service5Title": "Filmación",
+    "ebaPage.service5Desc": "Opción de captar el ambiente en vídeo, según tu paquete.",
+    "ebaPage.service6Title": "Garaje",
+    "ebaPage.service6Desc": "Estacionamiento para facilitar la llegada de las familias a la fiesta.",
+    "ebaPage.servicesImgAlt": "Niña celebrando con confeti de colores — EBA Buffet Infantil",
+    "ebaPage.galleryTitle": "Galería de fiestas",
+    "ebaPage.gallerySub": "Temas variados — cada celebración con el sello de tu familia.",
+    "ebaPage.galleryImgAlt": "Foto de fiesta infantil en EBA Buffet Infantil",
+    "ebaPage.gallerySeeAll": "Ver todas",
+    "ebaPage.gallerySeeLess": "Mostrar menos",
+    "ebaPage.galleryAllAria": "Todas las fotos de la galería EBA",
+    "ebaPage.ctaFinalTitle": "¿Listo para planear la fiesta?",
+    "ebaPage.ctaFinalSub": "Escríbenos por WhatsApp y recibe información sobre EBA Buffet Infantil.",
+    "ebaPage.whatsappBtn": "Hablar por WhatsApp",
+    "ebaPage.whatsappPrefill": "¡Hola! Quiero saber más sobre el EBA Buffet Infantil en Le Lys Espacio.",
+    "ebaPage.instagramAria": "Instagram EBA Buffet Infantil",
+    "ebaPage.backSection": "← Volver al sitio principal",
+    "ebaPage.ctaQuote": "SOLICITAR PRESUPUESTO EN EL SITIO"
   }
 };
 
@@ -240,6 +393,206 @@ function renderHeroCarousel() {
   track.innerHTML = fullList.map((item) => `<span>${item}</span>`).join("");
 }
 
+function renderEbaHeroCarousel() {
+  const track = document.getElementById("eba-hero-carousel-track");
+  if (!track) return;
+  const items = TRANSLATIONS[currentLanguage]?.ebaCarouselItems || TRANSLATIONS.pt.ebaCarouselItems;
+  const fullList = [...items, ...items];
+  track.innerHTML = fullList.map((item) => `<span>${item}</span>`).join("");
+}
+
+function updateEbaWhatsAppLink() {
+  const link = document.getElementById("eba-whatsapp-cta");
+  if (!link || document.body?.dataset?.page !== "eba-infantil") return;
+  const raw = document.body?.dataset?.ebaWhatsapp || EBA_WHATSAPP_NUMBER;
+  const num = String(raw).replace(/\D/g, "");
+  const text = encodeURIComponent(t("ebaPage.whatsappPrefill"));
+  link.href = `https://wa.me/${num}?text=${text}`;
+}
+
+function initEbaPageGallery() {
+  const grid = document.getElementById("eba-page-gallery-grid");
+  const lightbox = document.getElementById("eba-gallery-lightbox");
+  const lightboxImage = document.getElementById("eba-gallery-lightbox-image");
+  const lightboxClose = document.getElementById("eba-gallery-lightbox-close");
+  const gallerySection = document.querySelector(".eba-section--gallery");
+  const carousel3dContainer = gallerySection?.querySelector(".eba-gallery-3d-container");
+  const carousel3dStage = gallerySection?.querySelector(".eba-gallery-3d-stage");
+  const fullGrid = document.getElementById("eba-gallery-all-grid");
+  const expandWrap = document.getElementById("eba-gallery-expand-wrap");
+  const expandBtn = document.getElementById("eba-gallery-expand-btn");
+  if (!grid || !lightbox || !lightboxImage || !lightboxClose || !gallerySection) return;
+
+  let galleryExpanded = false;
+  let carouselResizeTimer = 0;
+  let carouselResizeObserver = null;
+  let ebaCarouselListenersAttached = false;
+
+  function previewPaths() {
+    if (EBA_GALLERY_PATHS.length <= EBA_GALLERY_PREVIEW_COUNT) return [...EBA_GALLERY_PATHS];
+    return EBA_GALLERY_PATHS.slice(0, EBA_GALLERY_PREVIEW_COUNT);
+  }
+
+  /**
+   * Raio do anel: R = (largura do painel / 2) / tan(π/n) para os cartões não se sobreporem.
+   * Escala o contentor se o anel real for maior que a área útil (evita cortar nas laterais).
+   */
+  function layoutEbaCarouselRing() {
+    const items = grid.querySelectorAll(".eba-gallery-item");
+    const n = items.length;
+    if (n < 1 || !carousel3dContainer) return;
+
+    const inner = gallerySection.querySelector(".eba-section-inner");
+    const innerW = inner?.getBoundingClientRect().width ?? window.innerWidth;
+
+    if (n === 1) {
+      items[0].style.transform = "translateZ(0)";
+      if (carousel3dStage) carousel3dStage.style.transform = "";
+      return;
+    }
+
+    const w = grid.getBoundingClientRect().width;
+    if (w < 8) return;
+
+    let translateZ;
+    if (n === 2) {
+      translateZ = w / 2 + 8;
+    } else {
+      translateZ = (w / 2) / Math.tan(Math.PI / n);
+    }
+    translateZ *= 1.04;
+
+    const angleStep = 360 / n;
+    items.forEach((el, index) => {
+      el.style.transform = `rotateY(${angleStep * index}deg) translateZ(${translateZ}px)`;
+    });
+
+    const maxRadiusPx = innerW * 0.42;
+    const scale = translateZ > maxRadiusPx ? maxRadiusPx / translateZ : 1;
+    if (carousel3dStage) {
+      carousel3dStage.style.transform =
+        scale < 0.995 ? `scale3d(${scale}, ${scale}, ${scale})` : "";
+      carousel3dStage.style.transformOrigin = "center center";
+    }
+  }
+
+  function scheduleCarouselLayout() {
+    window.clearTimeout(carouselResizeTimer);
+    carouselResizeTimer = window.setTimeout(() => layoutEbaCarouselRing(), 60);
+  }
+
+  function renderEbaCarousel() {
+    const alt = t("ebaPage.galleryImgAlt");
+    const paths = previewPaths();
+
+    grid.innerHTML = paths
+      .map((itemSrc) => {
+        const encodedSrc = itemSrc.split("/").map((part) => encodeURIComponent(part)).join("/");
+        return `
+        <div class="eba-gallery-item">
+          <img class="gallery-media eba-gallery-thumb" src="${encodedSrc}" data-fullsrc="${encodedSrc}" alt="${alt.replace(/"/g, "&quot;")}" loading="lazy" decoding="async">
+        </div>`;
+      })
+      .join("");
+
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        layoutEbaCarouselRing();
+      });
+    });
+
+    if (!ebaCarouselListenersAttached) {
+      ebaCarouselListenersAttached = true;
+      if (typeof ResizeObserver !== "undefined") {
+        carouselResizeObserver = new ResizeObserver(scheduleCarouselLayout);
+        carouselResizeObserver.observe(grid);
+      }
+      window.addEventListener("resize", scheduleCarouselLayout, { passive: true });
+    }
+  }
+
+  function renderEbaGalleryFullGrid() {
+    if (!fullGrid) return;
+    const alt = t("ebaPage.galleryImgAlt");
+    fullGrid.innerHTML = EBA_GALLERY_PATHS.map((itemSrc) => {
+      const encodedSrc = itemSrc.split("/").map((part) => encodeURIComponent(part)).join("/");
+      return `
+        <div class="gallery-item">
+          <img class="gallery-media eba-gallery-thumb" src="${encodedSrc}" data-fullsrc="${encodedSrc}" alt="${alt.replace(/"/g, "&quot;")}" loading="lazy" decoding="async">
+        </div>`;
+    }).join("");
+  }
+
+  function syncExpandVisibility() {
+    const needsExpand = EBA_GALLERY_PATHS.length > EBA_GALLERY_PREVIEW_COUNT;
+    if (expandWrap) expandWrap.hidden = !needsExpand;
+    if (!needsExpand && fullGrid) {
+      fullGrid.hidden = true;
+      fullGrid.classList.remove("is-expanded");
+      galleryExpanded = false;
+      if (expandBtn) {
+        expandBtn.setAttribute("aria-expanded", "false");
+        expandBtn.textContent = t("ebaPage.gallerySeeAll");
+      }
+    }
+  }
+
+  function setGalleryExpanded(expanded) {
+    galleryExpanded = expanded;
+    if (fullGrid) {
+      fullGrid.hidden = !expanded;
+      fullGrid.classList.toggle("is-expanded", expanded);
+    }
+    if (expandBtn) {
+      expandBtn.setAttribute("aria-expanded", expanded ? "true" : "false");
+      expandBtn.textContent = expanded ? t("ebaPage.gallerySeeLess") : t("ebaPage.gallerySeeAll");
+    }
+  }
+
+  renderEbaCarousel();
+  renderEbaGalleryFullGrid();
+  syncExpandVisibility();
+  setGalleryExpanded(false);
+
+  window.refreshEbaPageGallery = () => {
+    galleryExpanded = false;
+    renderEbaCarousel();
+    renderEbaGalleryFullGrid();
+    syncExpandVisibility();
+    setGalleryExpanded(false);
+    if (expandBtn) expandBtn.textContent = t("ebaPage.gallerySeeAll");
+  };
+
+  expandBtn?.addEventListener("click", () => setGalleryExpanded(!galleryExpanded));
+
+  gallerySection.addEventListener("click", (event) => {
+    const clickedImage = event.target.closest("img.eba-gallery-thumb");
+    if (!clickedImage) return;
+    const fullSrc = clickedImage.dataset.fullsrc || clickedImage.currentSrc || clickedImage.src;
+    lightboxImage.src = fullSrc;
+    lightboxImage.alt = clickedImage.alt || t("ebaPage.galleryImgAlt");
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  });
+
+  function closeEbaLightbox() {
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    lightboxImage.src = "";
+    document.body.style.overflow = "";
+  }
+
+  lightboxClose.addEventListener("click", closeEbaLightbox);
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox || event.target === lightboxClose) closeEbaLightbox();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && lightbox.classList.contains("is-open")) closeEbaLightbox();
+  });
+}
+
 function applyTranslations() {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
@@ -260,8 +613,12 @@ function applyTranslations() {
   });
 
   document.documentElement.lang = currentLanguage === "en" ? "en" : currentLanguage === "es" ? "es" : "pt-BR";
-  document.title = t("meta.title");
+  document.title =
+    document.body?.dataset?.page === "eba-infantil" ? t("ebaPage.metaTitle") : t("meta.title");
   renderHeroCarousel();
+  renderEbaHeroCarousel();
+  updateEbaWhatsAppLink();
+  if (typeof window.refreshEbaPageGallery === "function") window.refreshEbaPageGallery();
 }
 
 function setLanguage(language, persist = true) {
@@ -394,29 +751,7 @@ function initGalleryFilters() {
       "ventura/VENTURA_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_ROSA.jpg.jpeg",
       "ventura/VENTURA_ANIVERSÁRIO_RÚSTICO_RIPADO_ROSA_ROXO.jpg.jpeg"
     ],
-    eba: [
-      "EBA/BABY SHARK - EBA.jpeg",
-      "EBA/BABY SHARK-EBA.jpeg",
-      "EBA/CORINTHIANS2-EBA.jpeg",
-      "EBA/CORINTHIANS3- EBA.jpeg",
-      "EBA/CORINTHIANS3-EBA.jpeg",
-      "EBA/DINOSAUROS- EBA.jpg.jpeg",
-      "EBA/HARRY POTTER-EBA.jpeg",
-      "EBA/MINECRAFT - EBA.jpeg",
-      "EBA/MINECRAFT-EBA.jpeg",
-      "EBA/MINECRAFT3-EBA.jpeg",
-      "EBA/NARUTO-EBA.png",
-      "EBA/NARUTO-EBA3.png",
-      "EBA/PATRULHA CANINA-EBA.jpeg",
-      "EBA/PEQUENA SEREIA - EBA.png",
-      "EBA/PEQUENA SEREIA1 - EBA.png",
-      "EBA/PEQUENO PRINCIPE1 - EBA.jpeg",
-      "EBA/PRINCESAS1-EBA.jpeg",
-      "EBA/PRINCESAS2- EBA.jpeg",
-      "EBA/SAVANA-EBA.jpeg",
-      "EBA/SONIC-EBA.jpeg",
-      "EBA/TOY STORY-EBA.jpeg"
-    ]
+    eba: EBA_GALLERY_PATHS
   };
 
   const pageSize = 6;
@@ -508,8 +843,28 @@ function initGalleryFilters() {
   renderGallery(currentSpace, 0);
 }
 
+async function initEbaInfantilPage() {
+  await Promise.all([
+    loadComponent("header-component", "components/header.html"),
+    loadComponent("eba-infantil-root", "components/eba-infantil.html"),
+    loadComponent("footer-component", "components/footer.html")
+  ]);
+
+  initLanguageSwitcher();
+  initScrollFade();
+  initEbaPageGallery();
+  setLanguage(currentLanguage, false);
+
+  document.querySelector('.nav-links a[href="eba-infantil.html"]')?.classList.add("nav-link--current");
+}
+
 async function initPage() {
   currentLanguage = getSavedLanguage();
+
+  if (document.body?.dataset?.page === "eba-infantil") {
+    await initEbaInfantilPage();
+    return;
+  }
 
   await Promise.all([
     loadComponent("header-component", "components/header.html"),
