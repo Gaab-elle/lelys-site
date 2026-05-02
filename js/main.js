@@ -29,8 +29,76 @@ const EBA_GALLERY_PATHS = [
   "EBA/TOY STORY-EBA.jpeg"
 ];
 
-/** Quantidade de fotos no carrossel 3D; o restante abre na grelha com «Ver todas». */
-const EBA_GALLERY_PREVIEW_COUNT = 12;
+const GALLERY_DATA_BY_SPACE = {
+    maison: [
+      "maison/MAISON_ANIVERSÁRIO_CLÁSSICO_TERRA-COTA.JPG.jpeg",
+      "maison/MAISON_ANIVERSÁRIO_CLÁSSICO_TERRA-COTA_BRANCO.jpg.jpeg",
+      "maison/MAISON_ANIVERSÁRIO_ESPELHADO_ROSA_BRANCO.png",
+      "maison/MAISON_CASAMENTO_CLASSICO_AZUL_BRANCO.jpg.jpeg",
+      "maison/MAISON_CASAMENTO_CLASSICO_AZUL_BTRANCO_01MESA.jpeg",
+      "maison/MAISON_CASAMENTO_CLASSICO_BRANCO.jpg.jpeg",
+      "maison/MAISON_CASAMENTO_CLASSICO_BRANCO_ROSA_..jpeg",
+      "maison/MAISON_CASAMENTO_CLASSICO_BRANCO_ROSA_.jpeg",
+      "maison/MAISON_CASAMENTO_CLASSICO_BRANCO_ROXO_01MESA.jpg.jpeg",
+      "maison/MAISON_CASAMENTO_CLASSICO_ROSA_BRANCO.jpg.jpeg",
+      "maison/MAISON_CASAMENTO_ESPELHADO_BRANCO_01MESA (2).jpg.jpeg",
+      "maison/MAISON_CASAMENTO_ESPELHADO_BRANCO_01MESA (2).png",
+      "maison/MAISON_CASAMENTO_ESPELHADO_BRANCO_01MESA.jpg.jpeg",
+      "maison/MAISON_CASAMENTO_ESPELHADO_BRANCO_01MESA.png",
+      "maison/MAISON_CASAMENTO_ESPELHADO_BRANCO_ROSA_01MESA.jpg.jpeg",
+      "maison/MAISON_CASAMENTO_ESPELHADO_FLORES_NATURAIS_BRANCO_ROSA.jpg.jpeg",
+      "maison/MAISON_CASAMENTO_ESPELHADO_ROSA_01MESA.PNG",
+      "maison/MAISON_CASAMENTO_TERRA-COTA_BRANCO.jpg.jpeg",
+      "maison/MAISON_FORMATURA_365.jpeg"
+    ],
+    jardin: [
+      "jardin/JARDIN_15_CLÁSSICO_BRANCO_AZUL.jpg.jpeg",
+      "jardin/JARDIN_15_CLÁSSICO_BRANCO_ROXO_ROSA.jpg.jpeg",
+      "jardin/JARDIN_15_RÚSTICO_MADEIRA_BRANCO_VERMELHO_ROSA.jpg.jpeg",
+      "jardin/JARDIN_15_RÚSTICO_RIPADO_BRANCO_AZUL.jpg.jpeg",
+      "jardin/JARDIN_15_RÚSTICO_RIPADO_BRANCO_TERRA-COTA_AMARELO.jpg.jpeg",
+      "jardin/JARDIN_ANIVERSÁRIO_CLÁSSICO_BRANCO_TERRA-COTA_ROSA.jpg.jpeg",
+      "jardin/JARDIN_ANIVERSÁRIO_CLÁSSICO_BRANCO_VERMELHO.jpg.jpeg",
+      "jardin/JARDIN_ANIVERSÁRIO_ESPELHADO_BRANCO_LARANJA_ROSA_ROXO_VERDE_NEON.jpg.jpeg",
+      "jardin/JARDIN_ANIVERSÁRIO_ESPELHADO_BRANCO_LARANJA_ROXO_NEON.jpg.jpeg",
+      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_MADEIRA_BRANCO_ROSA.png",
+      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_MADEIRA_BRANCO_ROXO.png",
+      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_MADEIRA_BRANCO_TERRA-COTA.png",
+      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_MADEIRA_BRANCO_TERRA-COTA_VINHO.jpg.jpeg",
+      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_AMARELO.jpg.jpeg",
+      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_AZUL.jpg.jpeg",
+      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_LARANJA_AMARELO.jpg.jpeg",
+      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_TERRA-COTA (1).jpg.jpeg",
+      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_TERRA-COTA (2).jpg.jpeg",
+      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_TERRA-COTA (3).jpg.jpeg",
+      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_TERRA-COTA.jpg.jpeg",
+      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_TERRA-COTA_AMARELO.jpg.jpeg",
+      "jardin/JARDIN_CASAMENTO.jpeg",
+      "jardin/JARDIN_CASAMENTO_CLÁSSICO_BRANCO (2).jpg.jpeg",
+      "jardin/JARDIN_CASAMENTO_CLÁSSICO_BRANCO.JPG.jpeg",
+      "jardin/JARDIN_CASAMENTO_RÚSTICO_MADEIRA_PRETO_VERMELHO (1).jpg.jpeg",
+      "jardin/JARDIN_CASAMENTO_RÚSTICO_RIPADO_BRANCO (3).jpg.jpeg",
+      "jardin/JARDIN_CASAMENTO_RÚSTICO_RIPADO_BRANCO_TERRA-COTA_AZUL (11).jpg.jpeg",
+      "jardin/JARDIN_CASAMENTO_RÚSTICO_RIPADO_BRANCO_VERMELHO_ROSA (5).jpg.jpeg"
+    ],
+    ventura: [
+      "ventura/IMG_3123.PNG",
+      "ventura/IMG_3124.PNG",
+      "ventura/IMG_5636.PNG",
+      "ventura/IMG_5637.PNG",
+      "ventura/VENTURA_15_CLASSICO_AZUL.jpg.jpeg",
+      "ventura/VENTURA_15_CLASSICO_AZUL1.jpeg",
+      "ventura/VENTURA_15_CLASSICO_AZUL2.jpeg",
+      "ventura/VENTURA_15_ESPELHADO_PRETO_AZUL_BRANCO.jpg.jpeg",
+      "ventura/VENTURA_15_ESPELHADO_ROSA.jpg.jpeg",
+      "ventura/VENTURA_ANIVERSÁRIO_CLASSICO_ROSA.jpg.jpeg",
+      "ventura/VENTURA_ANIVERSÁRIO_ESPELHADO_PRETO (1).jpg.jpeg",
+      "ventura/VENTURA_ANIVERSÁRIO_ESPELHADO_PRETO.jpg.jpeg",
+      "ventura/VENTURA_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_ROSA.jpg.jpeg",
+      "ventura/VENTURA_ANIVERSÁRIO_RÚSTICO_RIPADO_ROSA_ROXO.jpg.jpeg"
+    ],
+    eba: EBA_GALLERY_PATHS
+  };
 
 const TRANSLATIONS = {
   pt: {
@@ -125,14 +193,16 @@ const TRANSLATIONS = {
     "ebaPage.service5Desc": "Possibilidade de captar o clima da festa em vídeo, conforme seu pacote.",
     "ebaPage.service6Title": "Garagem",
     "ebaPage.service6Desc": "Estacionamento para facilitar a chegada das famílias na festa.",
-    "ebaPage.servicesImgAlt": "Criança celebrando com confete colorido — EBA Buffet Infantil",
     "ebaPage.galleryTitle": "Galeria de festas",
     "ebaPage.gallerySub": "Temas variados — cada celebração com a cara da sua família.",
     "ebaPage.galleryImgAlt": "Foto de festa infantil no EBA Buffet Infantil",
-    "ebaPage.gallerySeeAll": "Ver todas",
-    "ebaPage.gallerySeeLess": "Mostrar menos",
-    "ebaPage.galleryAllAria": "Todas as fotos da galeria EBA",
+    "ebaPage.instagramBlockHeading": "Instagram",
+    "ebaPage.instagramBlockKicker": "Acompanhe-nos no Instagram",
+    "ebaPage.instagramHandle": "@eba.buffet.infantil",
+    "ebaPage.instagramSeeMore": "Ver mais",
+    "ebaPage.instagramBlockAria": "Abrir Instagram do EBA Buffet Infantil",
     "ebaPage.ctaFinalTitle": "Pronto para planejar a festa?",
+    "ebaPage.ctaFinalImgAlt": "Criança celebrando — EBA Buffet Infantil",
     "ebaPage.ctaFinalSub": "Chame no WhatsApp e receba orientação sobre o EBA Buffet Infantil.",
     "ebaPage.whatsappBtn": "Falar no WhatsApp",
     "ebaPage.whatsappPrefill": "Olá! Quero saber mais sobre o EBA Buffet Infantil na Le Lys Espaço.",
@@ -232,14 +302,16 @@ const TRANSLATIONS = {
     "ebaPage.service5Desc": "Optional recording of the celebration’s vibe, depending on your package.",
     "ebaPage.service6Title": "Parking",
     "ebaPage.service6Desc": "Parking so families can arrive comfortably for the party.",
-    "ebaPage.servicesImgAlt": "Child celebrating with colorful confetti — EBA Kids Buffet",
     "ebaPage.galleryTitle": "Party gallery",
     "ebaPage.gallerySub": "Many themes — each celebration reflects your family.",
     "ebaPage.galleryImgAlt": "Kids party photo at EBA Kids Buffet",
-    "ebaPage.gallerySeeAll": "See all",
-    "ebaPage.gallerySeeLess": "Show less",
-    "ebaPage.galleryAllAria": "All photos in the EBA gallery",
+    "ebaPage.instagramBlockHeading": "Instagram",
+    "ebaPage.instagramBlockKicker": "Follow us on Instagram",
+    "ebaPage.instagramHandle": "@eba.buffet.infantil",
+    "ebaPage.instagramSeeMore": "See more",
+    "ebaPage.instagramBlockAria": "Open EBA Kids Buffet on Instagram",
     "ebaPage.ctaFinalTitle": "Ready to plan the party?",
+    "ebaPage.ctaFinalImgAlt": "Child celebrating — EBA Kids Buffet",
     "ebaPage.ctaFinalSub": "Message us on WhatsApp for EBA Kids Buffet details.",
     "ebaPage.whatsappBtn": "Chat on WhatsApp",
     "ebaPage.whatsappPrefill": "Hello! I’d like to know more about EBA Kids Buffet at Le Lys Venue.",
@@ -339,14 +411,16 @@ const TRANSLATIONS = {
     "ebaPage.service5Desc": "Opción de captar el ambiente en vídeo, según tu paquete.",
     "ebaPage.service6Title": "Garaje",
     "ebaPage.service6Desc": "Estacionamiento para facilitar la llegada de las familias a la fiesta.",
-    "ebaPage.servicesImgAlt": "Niña celebrando con confeti de colores — EBA Buffet Infantil",
     "ebaPage.galleryTitle": "Galería de fiestas",
     "ebaPage.gallerySub": "Temas variados — cada celebración con el sello de tu familia.",
     "ebaPage.galleryImgAlt": "Foto de fiesta infantil en EBA Buffet Infantil",
-    "ebaPage.gallerySeeAll": "Ver todas",
-    "ebaPage.gallerySeeLess": "Mostrar menos",
-    "ebaPage.galleryAllAria": "Todas las fotos de la galería EBA",
+    "ebaPage.instagramBlockHeading": "Instagram",
+    "ebaPage.instagramBlockKicker": "Síguenos en Instagram",
+    "ebaPage.instagramHandle": "@eba.buffet.infantil",
+    "ebaPage.instagramSeeMore": "Ver más",
+    "ebaPage.instagramBlockAria": "Abrir Instagram de EBA Buffet Infantil",
     "ebaPage.ctaFinalTitle": "¿Listo para planear la fiesta?",
+    "ebaPage.ctaFinalImgAlt": "Niño celebrando — EBA Buffet Infantil",
     "ebaPage.ctaFinalSub": "Escríbenos por WhatsApp y recibe información sobre EBA Buffet Infantil.",
     "ebaPage.whatsappBtn": "Hablar por WhatsApp",
     "ebaPage.whatsappPrefill": "¡Hola! Quiero saber más sobre el EBA Buffet Infantil en Le Lys Espacio.",
@@ -411,186 +485,63 @@ function updateEbaWhatsAppLink() {
 }
 
 function initEbaPageGallery() {
-  const grid = document.getElementById("eba-page-gallery-grid");
-  const lightbox = document.getElementById("eba-gallery-lightbox");
-  const lightboxImage = document.getElementById("eba-gallery-lightbox-image");
-  const lightboxClose = document.getElementById("eba-gallery-lightbox-close");
-  const gallerySection = document.querySelector(".eba-section--gallery");
-  const carousel3dContainer = gallerySection?.querySelector(".eba-gallery-3d-container");
-  const carousel3dStage = gallerySection?.querySelector(".eba-gallery-3d-stage");
-  const fullGrid = document.getElementById("eba-gallery-all-grid");
-  const expandWrap = document.getElementById("eba-gallery-expand-wrap");
-  const expandBtn = document.getElementById("eba-gallery-expand-btn");
-  if (!grid || !lightbox || !lightboxImage || !lightboxClose || !gallerySection) return;
-
-  let galleryExpanded = false;
-  let carouselResizeTimer = 0;
-  let carouselResizeObserver = null;
-  let ebaCarouselListenersAttached = false;
-
-  function previewPaths() {
-    if (EBA_GALLERY_PATHS.length <= EBA_GALLERY_PREVIEW_COUNT) return [...EBA_GALLERY_PATHS];
-    return EBA_GALLERY_PATHS.slice(0, EBA_GALLERY_PREVIEW_COUNT);
-  }
-
-  /**
-   * Raio do anel: R = (largura do painel / 2) / tan(π/n) para os cartões não se sobreporem.
-   * Escala o contentor se o anel real for maior que a área útil (evita cortar nas laterais).
-   */
-  function layoutEbaCarouselRing() {
-    const items = grid.querySelectorAll(".eba-gallery-item");
-    const n = items.length;
-    if (n < 1 || !carousel3dContainer) return;
-
-    const inner = gallerySection.querySelector(".eba-section-inner");
-    const innerW = inner?.getBoundingClientRect().width ?? window.innerWidth;
-
-    if (n === 1) {
-      items[0].style.transform = "translateZ(0)";
-      if (carousel3dStage) carousel3dStage.style.transform = "";
-      return;
-    }
-
-    const w = grid.getBoundingClientRect().width;
-    if (w < 8) return;
-
-    let translateZ;
-    if (n === 2) {
-      translateZ = w / 2 + 8;
-    } else {
-      translateZ = (w / 2) / Math.tan(Math.PI / n);
-    }
-    translateZ *= 1.04;
-
-    const angleStep = 360 / n;
-    items.forEach((el, index) => {
-      el.style.transform = `rotateY(${angleStep * index}deg) translateZ(${translateZ}px)`;
-    });
-
-    const maxRadiusPx = innerW * 0.42;
-    const scale = translateZ > maxRadiusPx ? maxRadiusPx / translateZ : 1;
-    if (carousel3dStage) {
-      carousel3dStage.style.transform =
-        scale < 0.995 ? `scale3d(${scale}, ${scale}, ${scale})` : "";
-      carousel3dStage.style.transformOrigin = "center center";
-    }
-  }
-
-  function scheduleCarouselLayout() {
-    window.clearTimeout(carouselResizeTimer);
-    carouselResizeTimer = window.setTimeout(() => layoutEbaCarouselRing(), 60);
-  }
-
-  function renderEbaCarousel() {
-    const alt = t("ebaPage.galleryImgAlt");
-    const paths = previewPaths();
-
-    grid.innerHTML = paths
-      .map((itemSrc) => {
-        const encodedSrc = itemSrc.split("/").map((part) => encodeURIComponent(part)).join("/");
-        return `
-        <div class="eba-gallery-item">
-          <img class="gallery-media eba-gallery-thumb" src="${encodedSrc}" data-fullsrc="${encodedSrc}" alt="${alt.replace(/"/g, "&quot;")}" loading="lazy" decoding="async">
-        </div>`;
-      })
-      .join("");
-
-    window.requestAnimationFrame(() => {
-      window.requestAnimationFrame(() => {
-        layoutEbaCarouselRing();
-      });
-    });
-
-    if (!ebaCarouselListenersAttached) {
-      ebaCarouselListenersAttached = true;
-      if (typeof ResizeObserver !== "undefined") {
-        carouselResizeObserver = new ResizeObserver(scheduleCarouselLayout);
-        carouselResizeObserver.observe(grid);
-      }
-      window.addEventListener("resize", scheduleCarouselLayout, { passive: true });
-    }
-  }
-
-  function renderEbaGalleryFullGrid() {
-    if (!fullGrid) return;
-    const alt = t("ebaPage.galleryImgAlt");
-    fullGrid.innerHTML = EBA_GALLERY_PATHS.map((itemSrc) => {
-      const encodedSrc = itemSrc.split("/").map((part) => encodeURIComponent(part)).join("/");
-      return `
-        <div class="gallery-item">
-          <img class="gallery-media eba-gallery-thumb" src="${encodedSrc}" data-fullsrc="${encodedSrc}" alt="${alt.replace(/"/g, "&quot;")}" loading="lazy" decoding="async">
-        </div>`;
-    }).join("");
-  }
-
-  function syncExpandVisibility() {
-    const needsExpand = EBA_GALLERY_PATHS.length > EBA_GALLERY_PREVIEW_COUNT;
-    if (expandWrap) expandWrap.hidden = !needsExpand;
-    if (!needsExpand && fullGrid) {
-      fullGrid.hidden = true;
-      fullGrid.classList.remove("is-expanded");
-      galleryExpanded = false;
-      if (expandBtn) {
-        expandBtn.setAttribute("aria-expanded", "false");
-        expandBtn.textContent = t("ebaPage.gallerySeeAll");
-      }
-    }
-  }
-
-  function setGalleryExpanded(expanded) {
-    galleryExpanded = expanded;
-    if (fullGrid) {
-      fullGrid.hidden = !expanded;
-      fullGrid.classList.toggle("is-expanded", expanded);
-    }
-    if (expandBtn) {
-      expandBtn.setAttribute("aria-expanded", expanded ? "true" : "false");
-      expandBtn.textContent = expanded ? t("ebaPage.gallerySeeLess") : t("ebaPage.gallerySeeAll");
-    }
-  }
-
-  renderEbaCarousel();
-  renderEbaGalleryFullGrid();
-  syncExpandVisibility();
-  setGalleryExpanded(false);
-
-  window.refreshEbaPageGallery = () => {
-    galleryExpanded = false;
-    renderEbaCarousel();
-    renderEbaGalleryFullGrid();
-    syncExpandVisibility();
-    setGalleryExpanded(false);
-    if (expandBtn) expandBtn.textContent = t("ebaPage.gallerySeeAll");
-  };
-
-  expandBtn?.addEventListener("click", () => setGalleryExpanded(!galleryExpanded));
-
-  gallerySection.addEventListener("click", (event) => {
-    const clickedImage = event.target.closest("img.eba-gallery-thumb");
-    if (!clickedImage) return;
-    const fullSrc = clickedImage.dataset.fullsrc || clickedImage.currentSrc || clickedImage.src;
-    lightboxImage.src = fullSrc;
-    lightboxImage.alt = clickedImage.alt || t("ebaPage.galleryImgAlt");
-    lightbox.classList.add("is-open");
-    lightbox.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
+  const refresh = initGalleryController({
+    filterScopeSelector: "#eba-gallery-section",
+    gridId: "eba-page-gallery-grid",
+    prevId: "eba-gallery-prev",
+    nextId: "eba-gallery-next",
+    pageIndicatorId: "eba-gallery-page-indicator",
+    lightboxId: "eba-gallery-lightbox",
+    lightboxImageId: "eba-gallery-lightbox-image",
+    lightboxCloseId: "eba-gallery-lightbox-close",
+    defaultSpace: "eba",
   });
-
-  function closeEbaLightbox() {
-    lightbox.classList.remove("is-open");
-    lightbox.setAttribute("aria-hidden", "true");
-    lightboxImage.src = "";
-    document.body.style.overflow = "";
+  if (typeof refresh === "function") {
+    window.refreshEbaPageGallery = refresh;
   }
+}
 
-  lightboxClose.addEventListener("click", closeEbaLightbox);
-  lightbox.addEventListener("click", (event) => {
-    if (event.target === lightbox || event.target === lightboxClose) closeEbaLightbox();
-  });
+function renderEbaInstagramStrip() {
+  const container = document.getElementById("eba-instagram-strip");
+  if (!container || document.body?.dataset?.page !== "eba-infantil") return;
 
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && lightbox.classList.contains("is-open")) closeEbaLightbox();
+  const igUrl =
+    document.body?.dataset?.ebaInstagram?.trim() ||
+    "https://www.instagram.com/eba.buffet.infantil/";
+  const alt = t("ebaPage.galleryImgAlt");
+  const seeMore = t("ebaPage.instagramSeeMore");
+  const paths = EBA_GALLERY_PATHS.slice(0, 4);
+  const escAttr = (value) => String(value).replace(/"/g, "&quot;");
+  const encodedSrc = (src) => src.split("/").map((part) => encodeURIComponent(part)).join("/");
+
+  const links = paths
+    .map(
+      (src) => `
+    <a href="${igUrl}" class="eba-instagram-photo-link" target="_blank" rel="noopener noreferrer">
+      <img class="eba-instagram-photo-img" src="${encodedSrc(src)}" alt="${escAttr(alt)}" loading="lazy" decoding="async" width="280" height="280">
+    </a>`
+    )
+    .join("");
+
+  container.innerHTML =
+    links +
+    `<a href="${igUrl}" class="eba-instagram-more" target="_blank" rel="noopener noreferrer">${seeMore}</a>`;
+}
+
+function updateEbaInstagramProfileUrls() {
+  if (document.body?.dataset?.page !== "eba-infantil") return;
+  const igUrl =
+    document.body?.dataset?.ebaInstagram?.trim() ||
+    "https://www.instagram.com/eba.buffet.infantil/";
+  document.querySelectorAll("a.eba-instagram-cta-link").forEach((anchor) => {
+    anchor.href = igUrl;
   });
+}
+
+function initEbaInstagramStrip() {
+  updateEbaInstagramProfileUrls();
+  renderEbaInstagramStrip();
+  window.refreshEbaInstagramStrip = renderEbaInstagramStrip;
 }
 
 function applyTranslations() {
@@ -618,7 +569,9 @@ function applyTranslations() {
   renderHeroCarousel();
   renderEbaHeroCarousel();
   updateEbaWhatsAppLink();
+  updateEbaInstagramProfileUrls();
   if (typeof window.refreshEbaPageGallery === "function") window.refreshEbaPageGallery();
+  if (typeof window.refreshEbaInstagramStrip === "function") window.refreshEbaInstagramStrip();
 }
 
 function setLanguage(language, persist = true) {
@@ -672,94 +625,37 @@ function initScrollFade() {
   });
 }
 
-function initGalleryFilters() {
-  const galleryGrid = document.getElementById("gallery-grid");
-  const filterButtons = document.querySelectorAll(".gallery-filter");
-  const prevButton = document.getElementById("gallery-prev");
-  const nextButton = document.getElementById("gallery-next");
-  const pageIndicator = document.getElementById("gallery-page-indicator");
-  const lightbox = document.getElementById("gallery-lightbox");
-  const lightboxImage = document.getElementById("gallery-lightbox-image");
-  const lightboxClose = document.getElementById("gallery-lightbox-close");
-  if (!galleryGrid || filterButtons.length === 0 || !prevButton || !nextButton || !pageIndicator || !lightbox || !lightboxImage || !lightboxClose) return;
+function initGalleryController(options) {
+  const {
+    filterScopeSelector,
+    gridId,
+    prevId,
+    nextId,
+    pageIndicatorId,
+    lightboxId,
+    lightboxImageId,
+    lightboxCloseId,
+    defaultSpace,
+  } = options;
 
-  const galleryData = {
-    maison: [
-      "maison/MAISON_ANIVERSÁRIO_CLÁSSICO_TERRA-COTA.JPG.jpeg",
-      "maison/MAISON_ANIVERSÁRIO_CLÁSSICO_TERRA-COTA_BRANCO.jpg.jpeg",
-      "maison/MAISON_ANIVERSÁRIO_ESPELHADO_ROSA_BRANCO.png",
-      "maison/MAISON_CASAMENTO_CLASSICO_AZUL_BRANCO.jpg.jpeg",
-      "maison/MAISON_CASAMENTO_CLASSICO_AZUL_BTRANCO_01MESA.jpeg",
-      "maison/MAISON_CASAMENTO_CLASSICO_BRANCO.jpg.jpeg",
-      "maison/MAISON_CASAMENTO_CLASSICO_BRANCO_ROSA_..jpeg",
-      "maison/MAISON_CASAMENTO_CLASSICO_BRANCO_ROSA_.jpeg",
-      "maison/MAISON_CASAMENTO_CLASSICO_BRANCO_ROXO_01MESA.jpg.jpeg",
-      "maison/MAISON_CASAMENTO_CLASSICO_ROSA_BRANCO.jpg.jpeg",
-      "maison/MAISON_CASAMENTO_ESPELHADO_BRANCO_01MESA (2).jpg.jpeg",
-      "maison/MAISON_CASAMENTO_ESPELHADO_BRANCO_01MESA (2).png",
-      "maison/MAISON_CASAMENTO_ESPELHADO_BRANCO_01MESA.jpg.jpeg",
-      "maison/MAISON_CASAMENTO_ESPELHADO_BRANCO_01MESA.png",
-      "maison/MAISON_CASAMENTO_ESPELHADO_BRANCO_ROSA_01MESA.jpg.jpeg",
-      "maison/MAISON_CASAMENTO_ESPELHADO_FLORES_NATURAIS_BRANCO_ROSA.jpg.jpeg",
-      "maison/MAISON_CASAMENTO_ESPELHADO_ROSA_01MESA.PNG",
-      "maison/MAISON_CASAMENTO_TERRA-COTA_BRANCO.jpg.jpeg",
-      "maison/MAISON_FORMATURA_365.jpeg"
-    ],
-    jardin: [
-      "jardin/JARDIN_15_CLÁSSICO_BRANCO_AZUL.jpg.jpeg",
-      "jardin/JARDIN_15_CLÁSSICO_BRANCO_ROXO_ROSA.jpg.jpeg",
-      "jardin/JARDIN_15_RÚSTICO_MADEIRA_BRANCO_VERMELHO_ROSA.jpg.jpeg",
-      "jardin/JARDIN_15_RÚSTICO_RIPADO_BRANCO_AZUL.jpg.jpeg",
-      "jardin/JARDIN_15_RÚSTICO_RIPADO_BRANCO_TERRA-COTA_AMARELO.jpg.jpeg",
-      "jardin/JARDIN_ANIVERSÁRIO_CLÁSSICO_BRANCO_TERRA-COTA_ROSA.jpg.jpeg",
-      "jardin/JARDIN_ANIVERSÁRIO_CLÁSSICO_BRANCO_VERMELHO.jpg.jpeg",
-      "jardin/JARDIN_ANIVERSÁRIO_ESPELHADO_BRANCO_LARANJA_ROSA_ROXO_VERDE_NEON.jpg.jpeg",
-      "jardin/JARDIN_ANIVERSÁRIO_ESPELHADO_BRANCO_LARANJA_ROXO_NEON.jpg.jpeg",
-      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_MADEIRA_BRANCO_ROSA.png",
-      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_MADEIRA_BRANCO_ROXO.png",
-      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_MADEIRA_BRANCO_TERRA-COTA.png",
-      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_MADEIRA_BRANCO_TERRA-COTA_VINHO.jpg.jpeg",
-      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_AMARELO.jpg.jpeg",
-      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_AZUL.jpg.jpeg",
-      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_LARANJA_AMARELO.jpg.jpeg",
-      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_TERRA-COTA (1).jpg.jpeg",
-      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_TERRA-COTA (2).jpg.jpeg",
-      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_TERRA-COTA (3).jpg.jpeg",
-      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_TERRA-COTA.jpg.jpeg",
-      "jardin/JARDIN_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_TERRA-COTA_AMARELO.jpg.jpeg",
-      "jardin/JARDIN_CASAMENTO.jpeg",
-      "jardin/JARDIN_CASAMENTO_CLÁSSICO_BRANCO (2).jpg.jpeg",
-      "jardin/JARDIN_CASAMENTO_CLÁSSICO_BRANCO.JPG.jpeg",
-      "jardin/JARDIN_CASAMENTO_RÚSTICO_MADEIRA_PRETO_VERMELHO (1).jpg.jpeg",
-      "jardin/JARDIN_CASAMENTO_RÚSTICO_RIPADO_BRANCO (3).jpg.jpeg",
-      "jardin/JARDIN_CASAMENTO_RÚSTICO_RIPADO_BRANCO_TERRA-COTA_AZUL (11).jpg.jpeg",
-      "jardin/JARDIN_CASAMENTO_RÚSTICO_RIPADO_BRANCO_VERMELHO_ROSA (5).jpg.jpeg"
-    ],
-    ventura: [
-      "ventura/IMG_3123.PNG",
-      "ventura/IMG_3124.PNG",
-      "ventura/IMG_5636.PNG",
-      "ventura/IMG_5637.PNG",
-      "ventura/VENTURA_15_CLASSICO_AZUL.jpg.jpeg",
-      "ventura/VENTURA_15_CLASSICO_AZUL1.jpeg",
-      "ventura/VENTURA_15_CLASSICO_AZUL2.jpeg",
-      "ventura/VENTURA_15_ESPELHADO_PRETO_AZUL_BRANCO.jpg.jpeg",
-      "ventura/VENTURA_15_ESPELHADO_ROSA.jpg.jpeg",
-      "ventura/VENTURA_ANIVERSÁRIO_CLASSICO_ROSA.jpg.jpeg",
-      "ventura/VENTURA_ANIVERSÁRIO_ESPELHADO_PRETO (1).jpg.jpeg",
-      "ventura/VENTURA_ANIVERSÁRIO_ESPELHADO_PRETO.jpg.jpeg",
-      "ventura/VENTURA_ANIVERSÁRIO_RÚSTICO_RIPADO_BRANCO_ROSA.jpg.jpeg",
-      "ventura/VENTURA_ANIVERSÁRIO_RÚSTICO_RIPADO_ROSA_ROXO.jpg.jpeg"
-    ],
-    eba: EBA_GALLERY_PATHS
-  };
+  const galleryGrid = document.getElementById(gridId);
+  const filterButtons = document.querySelectorAll(`${filterScopeSelector} .gallery-filter`);
+  const prevButton = document.getElementById(prevId);
+  const nextButton = document.getElementById(nextId);
+  const pageIndicator = document.getElementById(pageIndicatorId);
+  const lightbox = document.getElementById(lightboxId);
+  const lightboxImage = document.getElementById(lightboxImageId);
+  const lightboxClose = document.getElementById(lightboxCloseId);
+  if (!galleryGrid || !prevButton || !nextButton || !pageIndicator || !lightbox || !lightboxImage || !lightboxClose) {
+    return null;
+  }
 
   const pageSize = 6;
-  let currentSpace = "maison";
+  let currentSpace = defaultSpace;
   let currentPage = 0;
 
   function renderGallery(space, page = 0) {
-    const items = galleryData[space] || galleryData.maison;
+    const items = GALLERY_DATA_BY_SPACE[space] || GALLERY_DATA_BY_SPACE.maison;
     const totalPages = Math.max(1, Math.ceil(items.length / pageSize));
     const safePage = Math.min(Math.max(page, 0), totalPages - 1);
     const start = safePage * pageSize;
@@ -795,13 +691,15 @@ function initGalleryFilters() {
     nextButton.disabled = safePage >= totalPages - 1;
   }
 
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      filterButtons.forEach((item) => item.classList.remove("is-active"));
-      button.classList.add("is-active");
-      renderGallery(button.dataset.space, 0);
+  if (filterButtons.length > 0) {
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach((item) => item.classList.remove("is-active"));
+        button.classList.add("is-active");
+        renderGallery(button.dataset.space, 0);
+      });
     });
-  });
+  }
 
   prevButton.addEventListener("click", () => {
     renderGallery(currentSpace, currentPage - 1);
@@ -839,9 +737,27 @@ function initGalleryFilters() {
     if (event.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
   });
 
-  window.refreshGalleryText = () => renderGallery(currentSpace, currentPage);
   renderGallery(currentSpace, 0);
+  return () => renderGallery(currentSpace, currentPage);
 }
+
+function initGalleryFilters() {
+  const refresh = initGalleryController({
+    filterScopeSelector: "#gallery",
+    gridId: "gallery-grid",
+    prevId: "gallery-prev",
+    nextId: "gallery-next",
+    pageIndicatorId: "gallery-page-indicator",
+    lightboxId: "gallery-lightbox",
+    lightboxImageId: "gallery-lightbox-image",
+    lightboxCloseId: "gallery-lightbox-close",
+    defaultSpace: "maison",
+  });
+  if (typeof refresh === "function") {
+    window.refreshGalleryText = refresh;
+  }
+}
+
 
 async function initEbaInfantilPage() {
   await Promise.all([
@@ -853,6 +769,7 @@ async function initEbaInfantilPage() {
   initLanguageSwitcher();
   initScrollFade();
   initEbaPageGallery();
+  initEbaInstagramStrip();
   setLanguage(currentLanguage, false);
 
   document.querySelector('.nav-links a[href="eba-infantil.html"]')?.classList.add("nav-link--current");
