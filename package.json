@@ -1,0 +1,8 @@
+{
+  "name": "lelys-site",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/prepare-deploy.js",
+    "dev": "python3 -m http.server 8080"
+  }
+}

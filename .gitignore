@@ -1,8 +1,10 @@
-# Média pesada — permanece no servidor/local de deploy, não versionar no Git
-*.mp4
+# Vídeos brutos / exports pesados (não versionar)
 *.mov
 *.webm
 *.mkv
+# Backups de vídeo antes da compressão
+*.mp4.bak
+*.orig.mp4
 
 # RAW / ficheiros enormes acidentais
 *.DNG
@@ -20,3 +22,14 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+
+# Segredos / ambiente local
+.env
+.env.*
+!.env.example
+
+# Config gerada no deploy (pode conter WhatsApp em produção)
+js/runtime-config.js
+
+# Ferramentas locais
+.cursor/

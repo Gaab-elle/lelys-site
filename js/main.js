@@ -1,9 +1,8 @@
+window.__LELYS_RUNTIME__ = window.__LELYS_RUNTIME__ || Object.freeze({ ebaWhatsapp: "" });
+
 const LANGUAGE_STORAGE_KEY = "lelys-language";
 const SUPPORTED_LANGUAGES = ["pt", "en", "es"];
 let currentLanguage = "pt";
-
-/** WhatsApp: DDI 55 + DDD + número (apenas dígitos). Edite aqui ou use data-eba-whatsapp no body de eba-infantil.html */
-const EBA_WHATSAPP_NUMBER = "5591999999999";
 
 const EBA_GALLERY_PATHS = [
   "EBA/BABY SHARK - EBA.jpeg",
@@ -171,7 +170,7 @@ const TRANSLATIONS = {
     "ebaPage.metaTitle": "EBA Buffet Infantil | Le Lys Espaço",
     ebaCarouselItems: ["FESTAS TEMÁTICAS", "ANIVERSÁRIOS", "MESVERSÁRIOS", "DECORAÇÃO INCLUSA", "BUFFET INFANTIL", "DIVERSÃO GARANTIDA"],
     "ebaPage.heroKicker": "Le Lys Espaço · EBA Buffet Infantil",
-    "ebaPage.heroHeading": "Conheça o EBA Buffet Infantil",
+    "ebaPage.heroHeading": "<span class=\"eba-word-blue\">Conheça</span> o <span class=\"eba-word-green\">EBA</span> <span class=\"eba-b-pink\">Buffet</span> <span class=\"eba-word-green\">Infantil</span>",
     "ebaPage.heroLogoAlt": "Logo EBA Buffet Infantil",
     "ebaPage.heroDescription": "O espaço onde a festa dos pequenos ganha cor, carinho e estrutura completa.",
     "ebaPage.heroCtaScroll": "CONHEÇA O EBA",
@@ -180,7 +179,7 @@ const TRANSLATIONS = {
     "ebaPage.aboutTitle": "O que é o EBA",
     "ebaPage.aboutImgAlt": "Criança celebrando com chapéu de aniversário — EBA Buffet Infantil",
     "ebaPage.aboutText": "O EBA Buffet Infantil é um espaço pensado para que as crianças sejam protagonistas: buffet especializado, decoração temática inclusa (consultar nossos pacotes) e um ambiente seguro e acolhedor para aniversários, mesversários e celebrações em família — com toda a estrutura e o cuidado da Le Lys Espaço.",
-    "ebaPage.servicesTitle": "Por que celebrar no EBA",
+    "ebaPage.servicesTitle": "Por que celebrar no <img src=\"ebalogo.png\" alt=\"EBA\" class=\"eba-heading-logo\" loading=\"lazy\" decoding=\"async\">",
     "ebaPage.service1Title": "Buffet infantil",
     "ebaPage.service1Desc": "Cardápio pensado para crianças, com sabor e apresentação que encantam a turma.",
     "ebaPage.service2Title": "Decoração",
@@ -280,7 +279,7 @@ const TRANSLATIONS = {
     "ebaPage.metaTitle": "EBA Kids Buffet | Le Lys Venue",
     ebaCarouselItems: ["THEMED PARTIES", "BIRTHDAYS", "MONTHLY CELEBRATIONS", "DECOR INCLUDED", "KIDS BUFFET", "FUN GUARANTEED"],
     "ebaPage.heroKicker": "Le Lys Venue · EBA Kids Buffet",
-    "ebaPage.heroHeading": "Discover EBA Kids Buffet",
+    "ebaPage.heroHeading": "<span class=\"eba-word-blue\">Discover</span> <span class=\"eba-word-green\">EBA</span> Kids <span class=\"eba-b-pink\">Buffet</span>",
     "ebaPage.heroLogoAlt": "EBA Kids Buffet logo",
     "ebaPage.heroDescription": "Where kids’ parties get color, care, and full support.",
     "ebaPage.heroCtaScroll": "DISCOVER EBA",
@@ -289,7 +288,7 @@ const TRANSLATIONS = {
     "ebaPage.aboutTitle": "What is EBA",
     "ebaPage.aboutImgAlt": "Child celebrating with a birthday hat — EBA Kids Buffet",
     "ebaPage.aboutText": "EBA Kids Buffet is a space designed for children to take center stage: specialized buffet, themed décor included (see our packages), and a safe, welcoming environment for birthdays, monthly milestones, and family celebrations — with the full structure and care of Le Lys Venue.",
-    "ebaPage.servicesTitle": "Why celebrate at EBA",
+    "ebaPage.servicesTitle": "Why celebrate at <img src=\"ebalogo.png\" alt=\"EBA\" class=\"eba-heading-logo\" loading=\"lazy\" decoding=\"async\">",
     "ebaPage.service1Title": "Kids buffet",
     "ebaPage.service1Desc": "Menus crafted for children with flavors and presentation kids love.",
     "ebaPage.service2Title": "Decor",
@@ -389,7 +388,7 @@ const TRANSLATIONS = {
     "ebaPage.metaTitle": "EBA Buffet Infantil | Le Lys Espacio",
     ebaCarouselItems: ["FIESTAS TEMÁTICAS", "CUMPLEAÑOS", "MESVERSARIOS", "DECORACIÓN INCLUIDA", "BUFFET INFANTIL", "DIVERSIÓN ASEGURADA"],
     "ebaPage.heroKicker": "Le Lys Espacio · EBA Buffet Infantil",
-    "ebaPage.heroHeading": "Conoce el EBA Buffet Infantil",
+    "ebaPage.heroHeading": "<span class=\"eba-word-blue\">Conoce</span> el <span class=\"eba-word-green\">EBA</span> <span class=\"eba-b-pink\">Buffet</span> <span class=\"eba-word-green\">Infantil</span>",
     "ebaPage.heroLogoAlt": "Logo EBA Buffet Infantil",
     "ebaPage.heroDescription": "El espacio donde la fiesta de los peques cobra color y estructura completa.",
     "ebaPage.heroCtaScroll": "CONOCE EL EBA",
@@ -398,7 +397,7 @@ const TRANSLATIONS = {
     "ebaPage.aboutTitle": "Qué es el EBA",
     "ebaPage.aboutImgAlt": "Niño celebrando con gorro de cumpleaños — EBA Buffet Infantil",
     "ebaPage.aboutText": "EBA Buffet Infantil es un espacio pensado para que los niños sean protagonistas: buffet especializado, decoración temática incluida (consulte nuestros paquetes) y un ambiente seguro y acogedor para cumpleaños, mesversarios y celebraciones en familia — con toda la estructura y el cariño de Le Lys Espacio.",
-    "ebaPage.servicesTitle": "Por qué celebrar en el EBA",
+    "ebaPage.servicesTitle": "Por qué celebrar en el <img src=\"ebalogo.png\" alt=\"EBA\" class=\"eba-heading-logo\" loading=\"lazy\" decoding=\"async\">",
     "ebaPage.service1Title": "Buffet infantil",
     "ebaPage.service1Desc": "Menú pensado para los niños, con sabor y presentación que enamoran.",
     "ebaPage.service2Title": "Decoración",
@@ -475,11 +474,23 @@ function renderEbaHeroCarousel() {
   track.innerHTML = fullList.map((item) => `<span>${item}</span>`).join("");
 }
 
+function getEbaWhatsAppNumber() {
+  const fromDataset = document.body?.dataset?.ebaWhatsapp?.trim();
+  const fromRuntime = window.__LELYS_RUNTIME__?.ebaWhatsapp;
+  return String(fromDataset || fromRuntime || "").replace(/\D/g, "");
+}
+
 function updateEbaWhatsAppLink() {
   const link = document.getElementById("eba-whatsapp-cta");
   if (!link || document.body?.dataset?.page !== "eba-infantil") return;
-  const raw = document.body?.dataset?.ebaWhatsapp || EBA_WHATSAPP_NUMBER;
-  const num = String(raw).replace(/\D/g, "");
+  const num = getEbaWhatsAppNumber();
+  if (!num) {
+    link.hidden = true;
+    link.setAttribute("aria-hidden", "true");
+    return;
+  }
+  link.hidden = false;
+  link.removeAttribute("aria-hidden");
   const text = encodeURIComponent(t("ebaPage.whatsappPrefill"));
   link.href = `https://wa.me/${num}?text=${text}`;
 }
